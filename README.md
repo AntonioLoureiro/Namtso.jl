@@ -1,4 +1,4 @@
 # Namtso.jl
 
 ## Examples:
-https://antonioloureiro.github.io/Namtso.jl/docs.html
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AntonioLoureiro/Namtso.jl/master?filepath=docs%2Fdocs.docs.ipynb)
