@@ -1,5 +1,4 @@
 # Namtso.jl
 
-##Examples:
-
+## Examples:
 https://antonioloureiro.github.io/Namtso.jl/docs.html
