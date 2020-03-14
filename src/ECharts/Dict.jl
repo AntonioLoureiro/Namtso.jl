@@ -67,14 +67,18 @@ function dict(p::Plot)
         push!(series_d["series"],nt.series_options)
         
         if length(nt.xaxis)!=0
-            options["xAxis"]=nt.xaxis
+            options["xAxis"]=[nt.xaxis]
         end
         if length(nt.yaxis)!=0
-            options["yAxis"]=nt.yaxis
+            options["yAxis"]=[nt.yaxis]
         end
     end
-        
     
+    ## legend
+    if length(p.series)>1
+       options["legend"]=Dict("data"=>map(x->x.name,p.series)) 
+    end
+        
     merge!(options,series_d)
     
     return options
