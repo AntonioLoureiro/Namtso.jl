@@ -2,7 +2,7 @@ module Namtso
 
 using Dates,JSON,Random
 
-export EChart,series!
+export EChart,series!,public_render!
 
 include("Base.jl")
 include("ECharts/ECharts.jl")

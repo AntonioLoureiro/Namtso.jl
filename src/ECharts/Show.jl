@@ -1,20 +1,18 @@
-
-const echarts_js_str="<script>$(read(joinpath(@__DIR__, "Assets", "echarts.min.js"), String))</script>"
-
 import Base.show
 
 function Base.show(io::IO, mm::MIME"text/html", ec::EChart)
 
      id=ec.id*randstring(5)
-     options = echart_json(ec.options)
+     options = Namtso.echart_json(ec.options)
     
      dom_str="""
         <div id=\"$(id)\" style=\"height:$(ec.height)px;width:$(ec.width)px;\"></div>
         <script type=\"text/javascript\">
-
                 var myChart = echarts.init(document.getElementById(\"$(id)\"));
                 myChart.setOption($options);
         </script>
       """
-    println(io,echarts_js_str*dom_str)
+    public_script="""<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>"""
+    str=public_script*dom_str
+    println(io,str)
 end
