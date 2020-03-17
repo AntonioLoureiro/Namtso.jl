@@ -13,6 +13,15 @@ function EChart(p::Plot)
     height=600
     
     options_d=dict(p)
+    if haskey(options_d,"width")
+      width=options_d["width"]
+      delete!(options_d,"width")
+    end
+    if haskey(options_d,"height")
+      height=options_d["height"]
+      delete!(options_d,"height")
+    end
+      
     return EChart(id,options_d,width,height)
 end
 
