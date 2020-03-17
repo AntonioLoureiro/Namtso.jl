@@ -1,4 +1,4 @@
-ECHART_FUNCTION_ATTRS=[]
+ECHART_FUNCTION_ATTRS=["formatter"]
 
 function echart_json(v,f_mode)
     if f_mode
