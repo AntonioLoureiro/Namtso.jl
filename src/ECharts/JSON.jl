@@ -14,7 +14,7 @@ function echart_json(d::Dict,f_mode::Bool=false)
     els=[]
     for (k,v) in d
         if k in ECHART_FUNCTION_ATTRS
-            j="\"$k\": $(vue_json(v,true))"
+            j="\"$k\": $(echart_json(v,true))"
         else
             j="\"$k\":"*echart_json(v,f_mode==false ? false : true)
         end
