@@ -18,7 +18,7 @@ end
 
 
 const BASE_OPTIONS=["title","legend","grid","xAxis","yAxis","radiusAxis","angleAxis","dataZoom","visualMap","tooltip","axisPointer","toolbox","brush","parallel","parallelAxis","singleAxis","timeline",
-"graphic","aria","color","backgroundColor","textStyle","animation"]
+"graphic","aria","color","backgroundColor","textStyle","animation","width","height"]
 
 function EChart(kind::String,args...;kwargs...)
     data=[]
@@ -37,6 +37,7 @@ function EChart(kind::String,args...;kwargs...)
            series_options[k]=v 
        end
     end
+ 
     series_name="Series1"
     series=Series(kind,series_name,data,series_options)    
     p=Plot([series],chart_options)
