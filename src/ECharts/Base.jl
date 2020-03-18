@@ -75,7 +75,7 @@ function Base.setindex!(ec::EChart, v,i::String)
     elseif i=="height"
         ec.height=v
     else
-        ec.options=dict_any(ec.options)
+        
         Base.setindex!(ec.options, v,i)
     end
     return nothing
