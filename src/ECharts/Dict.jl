@@ -58,6 +58,14 @@ function dict(series::Series)
     
 end
 
+function dict_any(d::Dict)	
+    d=convert(Dict{String,Any},d)	
+    for (k,v) in d	
+        v isa Dict ? d[k]=dict_any(v) : nothing	
+    end	
+    return d	
+end
+
 function dict(p::Plot)
     
     options=p.options
@@ -81,6 +89,7 @@ function dict(p::Plot)
         
     merge!(options,series_d)
     
-    return options
+    
+    return dict_any(options)
 end
 
