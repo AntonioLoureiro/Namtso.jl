@@ -45,5 +45,7 @@ function series!(ec::EChart,kind::String,args...;kwargs...)
        ec.options["legend"]=Dict("data"=>map(x->x["name"],ec["series"])) 
     end
         
+    
+    ec.options=dict_any(ec.options)
     return nothing
 end
