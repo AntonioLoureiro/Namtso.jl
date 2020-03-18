@@ -69,6 +69,14 @@ function Base.getindex(ec::EChart, i::String)
     end
 end
 
+function dict_any(d::Dict)
+    d=convert(Dict{String,Any},d)
+    for (k,v) in d
+        v isa Dict ? d[k]=dict_any(v) : nothing
+    end
+    return d
+end
+
 function Base.setindex!(ec::EChart, v,i::String)
     if i=="width"
        ec.width=v
@@ -76,7 +84,9 @@ function Base.setindex!(ec::EChart, v,i::String)
         ec.height=v
     else
         
-        Base.setindex!(ec.options, v,i)
+      options=dict_any(ec.options)
+      Base.setindex!(options, v,i)
+      ec.options=options
     end
     return nothing
 end
