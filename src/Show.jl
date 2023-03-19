@@ -12,7 +12,7 @@ function Base.show(io::IO, mm::MIME"text/html", ec::EChart)
                 myChart.setOption($options);
         </script>
       """
-    public_script="""<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>"""
+    public_script="""<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js"></script>"""
     str=public_script*dom_str
     println(io,str)
 end

@@ -66,7 +66,7 @@ function dict_any(d::Dict)
     return d	
 end
 
-function dict(p::Plot)
+function dict(p::PlotWithVectors)
     
     options=p.options
     series_d=Dict("series"=>[])
@@ -88,8 +88,7 @@ function dict(p::Plot)
     end
         
     merge!(options,series_d)
-    
+   
     
     return dict_any(options)
 end
-
