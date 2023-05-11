@@ -1,7 +1,7 @@
 name = "Namtso"
 uuid = "14fc9687-df25-4852-9e56-61a08c6e8132"
 authors = ["Antonio Loureiro <ajose.loureiro@gmail.com>"]
-version = "0.2.0"
+version = "0.2.1"
 
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
