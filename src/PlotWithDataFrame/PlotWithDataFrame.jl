@@ -29,7 +29,7 @@ dict(p::PlotWithDataFrame)=p.options
 SeriesWithDataFrame!(arr::Vector,df::DataFrame,chart_options::Dict)=map(x->SeriesWithDataFrame!(x,df,chart_options),arr)
 seriestype(arr::Vector{T} where T<:Number)="value"
 seriestype(arr::Vector{T} where T<:AbstractString)="category"
-seriestype(arr::Vector{T} where T<:Date)="time"
+seriestype(arr::Vector{T} where T<:Dates.AbstractTime)="time"
 get_chart_axys_type(arr::Vector)=get_chart_axys_type(arr[1])
 get_chart_axys_type(d::Dict)=get(d,"type",nothing)
 
