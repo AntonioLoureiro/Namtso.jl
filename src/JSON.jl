@@ -1,4 +1,10 @@
-ECHART_FUNCTION_ATTRS=["formatter"]
+struct JSFunc
+    content ::String    # "(arg1, arg2) -> { return arg1 + arg2 }"
+end
+
+macro jsfunc_str(content)
+    return JSFunc(content)
+end
 
 function echart_json(v,f_mode)
     if f_mode
@@ -13,8 +19,8 @@ echart_json(a::Array,f_mode)="[$(join(echart_json.(a,f_mode),","))]"
 function echart_json(d::Dict,f_mode::Bool=false)
     els=[]
     for (k,v) in d
-        if k in ECHART_FUNCTION_ATTRS
-            j="\"$k\": $(echart_json(v,true))"
+        if v isa JSFunc
+            j="\"$k\": $(v.content)"
         else
             j="\"$k\":"*echart_json(v,f_mode==false ? false : true)
         end
