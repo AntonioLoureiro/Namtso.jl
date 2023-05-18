@@ -30,6 +30,7 @@ SeriesWithDataFrame!(arr::Vector,df::DataFrame,chart_options::Dict)=map(x->Serie
 seriestype(arr::Vector{T} where T<:Number)="value"
 seriestype(arr::Vector{T} where T<:AbstractString)="category"
 seriestype(arr::Vector{T} where T<:Dates.AbstractTime)="time"
+seriestype(arr)="value"
 get_chart_axys_type(arr::Vector)=get_chart_axys_type(arr[1])
 get_chart_axys_type(d::Dict)=get(d,"type",nothing)
 
