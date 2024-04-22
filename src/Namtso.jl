@@ -2,7 +2,7 @@ module Namtso
 
 using Dates,JSON,Random,DataFrames
 
-export EChart,series!,public_render!
+export EChart,series!,public_render!,JSFunc,@js_str
 
 
 include("Base.jl")
