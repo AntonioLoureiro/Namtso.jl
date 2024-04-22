@@ -2,7 +2,7 @@ struct JSFunc
     content ::String    # "(arg1, arg2) -> { return arg1 + arg2 }"
 end
 
-macro jsfunc_str(content)
+macro js_str(content)
     return JSFunc(content)
 end
 
